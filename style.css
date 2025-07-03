@@ -8,8 +8,12 @@ h1 {
     color: #333;
     font-size: 24px;
 }
+.table-container {
+    overflow-x: auto;
+}
 table {
     width: 100%;
+    min-width: 800px; /* Mobil kaydırmada tablonun sıkışmasını engeller */
     border-collapse: collapse;
     margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -40,28 +44,32 @@ input[type="checkbox"] {
     height: 18px;
     cursor: pointer;
 }
+
+/* YENİ BUTON STİLLERİ */
+.button-container {
+    text-align: center;
+    padding: 20px 0;
+}
 #saveButton {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
+    padding: 12px 32px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
     background-color: #007BFF;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    transition: background-color 0.2s, transform 0.2s;
 }
 #saveButton:hover {
     background-color: #0056b3;
 }
-
-/* --- YATAY KAYDIRMALI MOBİL UYUMLULUK --- */
-@media screen and (max-width: 768px) {
-    .table-container {
-        overflow-x: auto; /* Yatayda taşan içeriğe kaydırma çubuğu ekle */
-        -webkit-overflow-scrolling: touch; /* iOS'ta daha akıcı kaydırma için */
-    }
+#saveButton:active {
+    transform: scale(0.98);
+}
+#saveButton:disabled {
+    background-color: #28a745;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.8;
 }
