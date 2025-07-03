@@ -68,6 +68,10 @@ app.post('/save', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('Sunucu çalışıyor ve artık yerel veritabanı kullanıyor.');
+// --- RENDER İÇİN DÜZELTİLMİŞ BÖLÜM ---
+// Render'ın bize verdiği PORT'u veya yerelde çalışmak için 3000'i kullan
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Sunucu ${PORT} portunda çalışıyor.`);
 });
